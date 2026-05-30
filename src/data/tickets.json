@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1780178579775",
+    "nombreSolicitante": "Alex",
+    "correo": "a@gmail.com",
+    "categoria": "red",
+    "descripcion": "Simple",
+    "impacto": "bajo",
+    "urgencia": "baja",
+    "tiempoEstimado": 1,
+    "estado": "en proceso",
+    "fechaCreacion": "2026-05-30T22:02:59.066Z",
+    "prioridad": "Baja"
+  },
+  {
+    "id": "1780178638059",
+    "nombreSolicitante": "Cristian",
+    "correo": "c@gmail.com",
+    "categoria": "otro",
+    "descripcion": "CRITICO",
+    "impacto": "alto",
+    "urgencia": "alta",
+    "tiempoEstimado": 24,
+    "estado": "resuelto",
+    "fechaCreacion": "2026-05-30T22:03:57.838Z",
+    "prioridad": "Crítica"
+  }
+]

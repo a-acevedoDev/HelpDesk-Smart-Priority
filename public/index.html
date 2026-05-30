@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HelpDesk Smart Priority</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>HelpDesk Smart Priority</h1>
+  </header>
+
+  <main>
+    <section id="login-section">
+      <h2>Iniciar sesión</h2>
+      <form id="login-form">
+        <label>
+          Usuario
+          <input type="text" id="username" required />
+        </label>
+        <label>
+          Contraseña
+          <input type="password" id="password" required />
+        </label>
+        <button type="submit">Entrar</button>
+      </form>
+      <div id="login-message" class="message"></div>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="actions">
+        <button id="logout-button">Cerrar sesión</button>
+      </div>
+
+      <div class="grid">
+        <article>
+          <h2>Registrar ticket</h2>
+          <form id="ticket-form">
+            <label>
+              Nombre del solicitante
+              <input type="text" id="nombreSolicitante" required />
+            </label>
+            <label>
+              Correo
+              <input type="email" id="correo" required />
+            </label>
+            <label>
+              Categoría
+              <select id="categoria" required>
+                <option value="hardware">hardware</option>
+                <option value="software">software</option>
+                <option value="red">red</option>
+                <option value="cuenta">cuenta</option>
+                <option value="otro">otro</option>
+              </select>
+            </label>
+            <label>
+              Impacto
+              <select id="impacto" required>
+                <option value="bajo">bajo</option>
+                <option value="medio">medio</option>
+                <option value="alto">alto</option>
+              </select>
+            </label>
+            <label>
+              Urgencia
+              <select id="urgencia" required>
+                <option value="baja">baja</option>
+                <option value="media">media</option>
+                <option value="alta">alta</option>
+              </select>
+            </label>
+            <label>
+              Tiempo estimado (horas)
+              <input type="number" id="tiempoEstimado" value="1" min="0" required />
+            </label>
+            <label>
+              Descripción
+              <textarea id="descripcion" rows="4" required></textarea>
+            </label>
+            <button type="submit">Crear ticket</button>
+          </form>
+          <div id="ticket-message" class="message"></div>
+        </article>
+
+        <article>
+          <h2>Listado de tickets</h2>
+          <div id="tickets-list"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <template id="ticket-template">
+    <div class="ticket-card">
+      <h3 class="ticket-title"></h3>
+      <p><strong>ID:</strong> <span class="ticket-id"></span></p>
+      <p><strong>Solicitante:</strong> <span class="ticket-name"></span></p>
+      <p><strong>Correo:</strong> <span class="ticket-email"></span></p>
+      <p><strong>Categoría:</strong> <span class="ticket-category"></span></p>
+      <p><strong>Impacto:</strong> <span class="ticket-impact"></span></p>
+      <p><strong>Urgencia:</strong> <span class="ticket-urgency"></span></p>
+      <p><strong>Tiempo estimado:</strong> <span class="ticket-time"></span> horas</p>
+      <p><strong>Estado:</strong> <span class="ticket-status"></span></p>
+      <p><strong>Prioridad:</strong> <span class="ticket-priority"></span></p>
+      <p><strong>Creación:</strong> <span class="ticket-created"></span></p>
+      <div class="ticket-actions">
+        <button class="view-button">Ver</button>
+        <button class="update-button">Avanzar estado</button>
+        <button class="delete-button">Eliminar</button>
+      </div>
+    </div>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
